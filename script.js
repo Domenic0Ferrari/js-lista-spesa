@@ -30,3 +30,25 @@ while (i < myList.length){
     eleList.innerHTML += `<li>${myList[i]}</li>`;
     i++;
 }
+
+const btnAdd = document.querySelector('#btn-add');
+const inputAdd = document.querySelector('#input-add');
+
+btnAdd.addEventListener('click',
+	function () {
+		// prendere il valore dall'input
+		const addText = inputAdd.value.trim().toLowerCase();
+
+		if (addText != '') {
+			// console.log di addText
+			console.log(addText);
+			// pusharlo nell'array
+			myList.push(addText);
+			console.log(myList);
+			// stampare il valore in pagina
+			eleList.innerHTML += `<li>${addText}</li>`;
+		}
+
+		inputAdd.value = '';
+	}
+)
